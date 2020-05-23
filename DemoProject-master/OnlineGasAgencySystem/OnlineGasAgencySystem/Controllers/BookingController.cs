@@ -11,7 +11,7 @@ namespace OnlineGasAgencySystem.Controllers
 {
     public class BookingController : Controller
     {
-        // GET: Booking test
+        // GET: Booking 
         public ActionResult Index()
         {
             Booking booking = new Booking();
