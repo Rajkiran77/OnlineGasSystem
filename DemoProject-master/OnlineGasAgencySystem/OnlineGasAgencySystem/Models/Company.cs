@@ -10,6 +10,10 @@ namespace OnlineGasAgencySystem.Models
         public int? companyid { get; set; }
         public string companyname { get; set; }
 
+
+        //changesss 
+
         //changes
+
     }
 }
