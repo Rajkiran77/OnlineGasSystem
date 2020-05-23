@@ -1,0 +1,243 @@
+﻿@model IEnumerable<OnlineGasAgencySystem.Models.Transaction>
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/Transaction.js"></script>
+
+<div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+
+    <div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_grid-table" dir="ltr" style="width: 583px;">
+        <div class="jqgrid-overlay ui-widget-overlay" id="lui_grid-table"></div>
+        <div class="loading ui-state-default ui-state-active" id="load_grid-table" style="display: none;">Loading...</div>
+        <div class="ui-jqgrid-view " role="grid" id="gview_grid-table" style="width:800px;">
+            <div class="ui-jqgrid-titlebar ui-jqgrid-caption ui-widget-header ui-corner-top ui-helper-clearfix">
+                Transaction
+            </div>
+            <div class="ui-jqgrid-hdiv ui-state-default" style="width: 800px;">
+                <div class="ui-jqgrid-hbox">
+                    <table class="ui-jqgrid-htable ui-common-table " style="width: 800px;" role="presentation" aria-labelledby="gbox_grid-table">
+                        <thead>
+                            <tr class="ui-jqgrid-labels" role="row">
+                                <th id="grid-table_id" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 42px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_id" class="ui-jqgrid-sortable">
+                                        ID
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_sdate" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 63px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_sdate" class="ui-jqgrid-sortable">
+                                        Connection ID
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_name" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 105px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_name" class="ui-jqgrid-sortable">
+                                        Connection Type
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_stock" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 49px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_stock" class="ui-jqgrid-sortable">
+                                        Date of Booking
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_ship" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 63px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_ship" class="ui-jqgrid-sortable">
+                                        Date of Delivery
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        Booking ID
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        Price
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        Company Name
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        Status Type
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        UserName
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        UserPhoneNumber
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+                                <th id="grid-table_note" role="columnheader" class="ui-th-column ui-th-ltr ui-state-default" style="width: 103px;">
+                                    <span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span>
+                                    <div id="jqgh_grid-table_note" class="ui-jqgrid-sortable">
+                                        UserAddress
+                                        <span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-n"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-sort-ltr ui-state-disabled ui-icon ui-icon-triangle-1-s"></span></span>
+                                    </div>
+                                </th>
+
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="ui-jqgrid-bdiv" style="height: 350px; width:800px;">
+                <div style="position:relative;">
+                    <div></div>
+                    <table id="grid-table" tabindex="0" role="presentation" aria-multiselectable="true" aria-labelledby="gbox_grid-table" class="ui-jqgrid-btable ui-common-table" style="width: 800px;">
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr role="row" id="1" tabindex="-1" class="jqgrow ui-row-ltr ui-widget-content">
+                                    <td role="gridcell" style="" title="1" aria-describedby="grid-table_id">@item.transactionid</td>
+                                    <td role="gridcell" style="" title="connectionid" aria-describedby="grid-table_sdate">@item.connectionid</td>
+                                    <td role="gridcell" style="" title="connectiontype" aria-describedby="grid-table_name">@item.connectiontype</td>
+                                    <td role="gridcell" style="" title="tdob" aria-describedby="grid-table_stock">@item.tdob</td>
+                                    <td role="gridcell" style="" title="tdod" aria-describedby="grid-table_ship">@item.tdod</td>
+                                    <td role="gridcell" style="" title="bookingid" aria-describedby="grid-table_note">@item.bookingid</td>
+                                    <td role="gridcell" style="" title="price" aria-describedby="grid-table_note">@item.price</td>
+                                    <td role="gridcell" style="" title="companyname" aria-describedby="grid-table_note">@item.companyname</td>
+                                    <td role="gridcell" style="" title="statustype" aria-describedby="grid-table_note">@item.statustype</td>
+                                    <td role="gridcell" style="" title="username" aria-describedby="grid-table_note">@item.username</td>
+                                    <td role="gridcell" style="" title="userphone" aria-describedby="grid-table_note">@item.userphone</td>
+                                    <td role="gridcell" style="" title="useraddress" aria-describedby="grid-table_note">@item.useraddress</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="ui-jqgrid-resize-mark" id="rs_mgrid-table">&nbsp;</div>
+        <div id="grid-pager" class="ui-jqgrid-pager ui-state-default ui-corner-bottom" dir="ltr" style="width: 800px;">
+            <div id="pg_grid-pager" class="ui-pager-control" role="group">
+                <table class="ui-pg-table ui-common-table ui-pager-table ">
+                    <tbody>
+                        <tr>
+                            <td id="grid-pager_left" align="left">
+                                <table class="ui-pg-table navtable ui-common-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ui-pg-button ui-corner-all" title="" id="add_grid-table" data-original-title="Add new row">
+                                                <div class="ui-pg-div">
+                                                    <span class="ui-icon ace-icon fa fa-plus-circle purple"></span>
+                                                </div>
+                                            </td>
+                                            <td class="ui-pg-button ui-corner-all" title="" id="edit_grid-table" data-original-title="Edit selected row">
+                                                <div class="ui-pg-div">
+                                                    <span class="ui-icon ace-icon fa fa-pencil blue"></span>
+                                                </div>
+                                            </td>
+                                            <td class="ui-pg-button ui-corner-all" title="" id="view_grid-table" data-original-title="View selected row">
+                                                <div class="ui-pg-div">
+                                                    <span class="ui-icon ace-icon fa fa-search-plus grey"></span>
+                                                </div>
+                                            </td>
+                                            <td class="ui-pg-button ui-corner-all" title="" id="del_grid-table" data-original-title="Delete selected row">
+                                                <div class="ui-pg-div">
+                                                    <span class="ui-icon ace-icon fa fa-trash-o red"></span>
+                                                </div>
+                                            </td>
+                                            <td class="ui-pg-button ui-state-disabled" style="width:4px;" data-original-title="" title="">
+                                                <span class="ui-separator"></span>
+                                            </td>
+                                            <td class="ui-pg-button ui-corner-all" title="" id="search_grid-table" data-original-title="Find records">
+                                                <div class="ui-pg-div">
+                                                    <span class="ui-icon ace-icon fa fa-search orange"></span>
+                                                </div>
+                                            </td>
+                                            <td class="ui-pg-button ui-corner-all" title="" id="refresh_grid-table" data-original-title="Reload Grid">
+                                                <div class="ui-pg-div">
+                                                    <span class="ui-icon ace-icon fa fa-refresh green"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td id="grid-pager_center" align="center" style="white-space: pre; width: 339px;">
+                                <table class="ui-pg-table ui-common-table ui-paging-pager">
+                                    <tbody>
+                                        <tr>
+                                            <td id="first_grid-pager" class="ui-pg-button ui-corner-all ui-state-disabled" title="First Page">
+                                                <span class="ui-icon ace-icon fa fa-angle-double-left bigger-140"></span>
+                                            </td>
+                                            <td id="prev_grid-pager" class="ui-pg-button ui-corner-all ui-state-disabled" title="Previous Page">
+                                                <span class="ui-icon ace-icon fa fa-angle-left bigger-140"></span>
+                                            </td>
+                                            <td class="ui-pg-button ui-state-disabled">
+                                                <span class="ui-separator"></span>
+                                            </td>
+                                            <td id="input_grid-pager" dir="ltr">
+                                                Page
+                                                <input class="ui-pg-input ui-corner-all" type="text" size="2" maxlength="7" value="0" role="textbox"> of
+                                                <span id="sp_1_grid-pager">3</span>
+                                            </td>
+                                            <td class="ui-pg-button ui-state-disabled">
+                                                <span class="ui-separator"></span>
+                                            </td>
+                                            <td id="next_grid-pager" class="ui-pg-button ui-corner-all" title="Next Page">
+                                                <span class="ui-icon ace-icon fa fa-angle-right bigger-140"></span>
+                                            </td>
+                                            <td id="last_grid-pager" class="ui-pg-button ui-corner-all" title="Last Page">
+                                                <span class="ui-icon ace-icon fa fa-angle-double-right bigger-140"></span>
+                                            </td>
+                                            <td dir="ltr">
+                                                <select class="ui-pg-selbox ui-widget-content ui-corner-all" role="listbox" title="Records per Page"><option role="option" value="10" selected="selected">10</option><option role="option" value="20">20</option><option role="option" value="30">30</option></select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td id="grid-pager_right" align="right">
+                                <div dir="ltr" style="text-align:right" class="ui-paging-info">View 1 - 10 of 23</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- PAGE CONTENT ENDS -->
+</div>
+
+
+
+
+
+
+
