@@ -12,9 +12,15 @@ namespace OnlineGasAgencySystem.Controllers
     public class ConnectionController : Controller
     {
       
-        // GET: Connection chhhhhh indra
 
-        // GET: Connection changes
+
+        // GET: Connection chhhhhh
+
+        // GET: Connection chhhhhh hello
+
+
+
+     
 
         public ActionResult Index()
         {
