@@ -12,13 +12,15 @@ namespace OnlineGasAgencySystem.Controllers
     public class ConnectionController : Controller
     {
       
-<<<<<<< Updated upstream
-        // GET: Connection chhhhhh
-=======
-        // GET: Connection chhhhhh hello
->>>>>>> Stashed changes
 
-        // GET: Connection changes
+
+        // GET: Connection chhhhhh
+
+        // GET: Connection chhhhhh hello
+
+
+
+     
 
         public ActionResult Index()
         {

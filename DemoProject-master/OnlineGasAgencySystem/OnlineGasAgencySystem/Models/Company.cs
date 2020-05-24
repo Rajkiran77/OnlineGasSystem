@@ -11,13 +11,15 @@ namespace OnlineGasAgencySystem.Models
         public string companyname { get; set; }
 
 
-<<<<<<< Updated upstream
-        //changesss 
-=======
-        //changesss indra hello
->>>>>>> Stashed changes
 
-        //changes
+
+        //changesss 
+
+        //changesss indra hello
+
+
+
+     
 
     }
 }
